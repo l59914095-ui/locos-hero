@@ -148,8 +148,11 @@ export default function App() {
           scrolled ? 'bg-black/85 backdrop-blur-sm' : 'bg-transparent'
         }`}
       >
-        <a href="#inicio" className="font-podium text-2xl font-bold uppercase tracking-wider text-white sm:text-3xl">
-          LOCOS <span className="text-[#FF847C]">3D</span>
+        <a href="#inicio" className="flex items-center gap-3">
+          <img src={`${BASE}img/logo-icono.png`} alt="" className="h-10 w-10 object-contain sm:h-11 sm:w-11" />
+          <span className="font-podium text-2xl font-bold uppercase tracking-wider text-white sm:text-3xl">
+            LOCOS <span className="text-[#FF847C]">3D</span>
+          </span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -188,8 +191,11 @@ export default function App() {
         }`}
       >
         <div className="flex items-center justify-between px-6 py-5">
-          <span className="font-podium text-2xl font-bold uppercase tracking-wider text-white">
-            LOCOS <span className="text-[#FF847C]">3D</span>
+          <span className="flex items-center gap-3">
+            <img src={`${BASE}img/logo-icono.png`} alt="" className="h-10 w-10 object-contain" />
+            <span className="font-podium text-2xl font-bold uppercase tracking-wider text-white">
+              LOCOS <span className="text-[#FF847C]">3D</span>
+            </span>
           </span>
           <button onClick={() => setMenuOpen(false)} aria-label="Cerrar menú">
             <X className="h-7 w-7 text-white" />
@@ -498,9 +504,12 @@ export default function App() {
       {/* ============ FOOTER ============ */}
       <footer className="border-t border-white/10 px-6 py-12 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-8 md:flex-row">
-          <span className="font-podium text-2xl font-bold uppercase tracking-wider text-white">
-            LOCOS <span className="text-[#FF847C]">3D</span>
-          </span>
+          <img
+            src={`${BASE}img/logo-claro.png`}
+            alt="Locos Diseños E Impresiones 3D"
+            loading="lazy"
+            className="h-24 w-auto object-contain"
+          />
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-widest text-white/60">
             <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 transition-colors hover:text-white">
               <Phone className="h-4 w-4" /> 614 379 5377
