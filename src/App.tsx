@@ -8,9 +8,24 @@ const BASE = import.meta.env.BASE_URL
 
 const NAV_LINKS = [
   { label: 'Tendencias', href: '#tendencias' },
+  { label: 'Foto a 3D', href: '#foto-a-3d' },
   { label: 'Servicios', href: '#servicios' },
+  { label: 'Proceso', href: '#proceso' },
   { label: 'Somos', href: '#somos' },
   { label: 'Preguntas', href: '#preguntas' },
+]
+
+const PASOS_FOTO = [
+  { num: '01', titulo: 'Mándanos tu foto', desc: 'Por WhatsApp, la que quieras: una selfie, tu mascota, tus hijos, tu carro…' },
+  { num: '02', titulo: 'Diseñamos tu modelo 3D', desc: 'Nuestro equipo esculpe el modelo digital con todos sus detalles y te lo mostramos antes de imprimir.' },
+  { num: '03', titulo: 'La imprimimos a todo color', desc: 'Capa por capa, con los colores impresos en el material. Lista para regalar o presumir.' },
+]
+
+const PASOS_PROCESO = [
+  { num: '01', titulo: 'Escríbenos', desc: 'Mándanos por WhatsApp tu idea, foto o pieza que necesitas.' },
+  { num: '02', titulo: 'Recibe tu cotización', desc: 'Precio y tiempo de entrega, sin compromiso y sin letras chiquitas.' },
+  { num: '03', titulo: 'Aprobamos el diseño', desc: 'Te mostramos una vista previa del modelo antes de imprimir. Tú das el visto bueno.' },
+  { num: '04', titulo: '¡Lista tu pieza!', desc: 'Entrega en Chihuahua capital o coordinamos envío a donde estés.' },
 ]
 
 const PRODUCTOS = [
@@ -155,12 +170,12 @@ export default function App() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-7">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm uppercase tracking-widest text-white/80 transition-colors hover:text-white"
+              className="text-[13px] uppercase tracking-widest text-white/80 transition-colors hover:text-white"
             >
               {link.label}
             </a>
@@ -202,13 +217,13 @@ export default function App() {
           </button>
         </div>
 
-        <nav className="flex h-[70%] flex-col items-center justify-center gap-8">
+        <nav className="flex h-[75%] flex-col items-center justify-center gap-5 sm:gap-7">
           {NAV_LINKS.map((link, i) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="font-podium text-4xl uppercase text-white transition-all duration-500 sm:text-5xl"
+              className="font-podium text-3xl uppercase text-white transition-all duration-500 sm:text-4xl"
               style={{
                 transitionDelay: `${i * 80 + 100}ms`,
                 opacity: menuOpen ? 1 : 0,
@@ -381,6 +396,57 @@ export default function App() {
         </div>
       </section>
 
+      {/* ============ FOTO A 3D ============ */}
+      <section id="foto-a-3d" className="scroll-mt-24 border-t border-white/10 px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
+        <div className="mx-auto max-w-[1400px]">
+          <SectionHead label="Foto a 3D">
+            De tu foto a algo que puedes <span className="text-[#FF847C]">tocar</span>
+          </SectionHead>
+
+          <Reveal className="-mt-6 mb-12 lg:-mt-10 lg:mb-16">
+            <p className="max-w-2xl text-sm leading-relaxed text-white/60 sm:text-base">
+              ¿Una foto especial? Nosotros la convertimos en una figura real: tu familia, tu mascota,
+              tu carro o tu personaje favorito.
+            </p>
+          </Reveal>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {PASOS_FOTO.map((paso, i) => (
+              <Reveal key={paso.num} delay={i * 100}>
+                <article className="h-full border border-white/10 bg-neutral-950 p-8 transition-colors hover:border-white/30">
+                  <span className="font-podium text-5xl text-[#FF847C]/80">{paso.num}</span>
+                  <h3 className="mt-4 font-podium text-xl uppercase tracking-wide text-white">{paso.titulo}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60">{paso.desc}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mt-14">
+            <div className="flex flex-col items-center justify-between gap-6 border border-white/10 bg-neutral-950 px-8 py-10 text-center md:flex-row md:text-left">
+              <div>
+                <h3 className="font-podium text-2xl uppercase tracking-wide text-white sm:text-3xl">
+                  El regalo que nadie más puede dar
+                </h3>
+                <p className="mt-2 max-w-xl text-sm text-white/60">
+                  Cumpleaños, aniversarios, graduaciones, Día de las Madres… una figura de esa persona
+                  especial es un recuerdo que se queda para siempre.
+                </p>
+              </div>
+              <a
+                href={`${WHATSAPP}?text=Hola%2C%20quiero%20convertir%20una%20foto%20en%20figura%203D%20%F0%9F%93%B8`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex shrink-0 items-center gap-2 bg-[#FF847C] px-7 py-4 text-xs font-semibold uppercase tracking-widest text-black transition-colors hover:bg-[#ffa19b]"
+              >
+                Quiero mi figura
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ============ SERVICIOS ============ */}
       <section id="servicios" className="scroll-mt-24 border-t border-white/10 px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
         <div className="mx-auto max-w-[1400px]">
@@ -404,6 +470,27 @@ export default function App() {
                     <p className="mt-1 text-xs leading-relaxed text-white/60">{s.desc}</p>
                   </div>
                 </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ PROCESO ============ */}
+      <section id="proceso" className="scroll-mt-24 border-t border-white/10 px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
+        <div className="mx-auto max-w-[1400px]">
+          <SectionHead label="Así de fácil">
+            De WhatsApp a tus manos en <span className="text-[#FF847C]">4 pasos</span>
+          </SectionHead>
+
+          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {PASOS_PROCESO.map((paso, i) => (
+              <Reveal key={paso.num} delay={i * 100}>
+                <div className="border-t-2 border-[#FF847C]/70 pt-6">
+                  <span className="font-podium text-4xl text-white/25">{paso.num}</span>
+                  <h3 className="mt-3 font-podium text-lg uppercase tracking-wide text-white">{paso.titulo}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60">{paso.desc}</p>
+                </div>
               </Reveal>
             ))}
           </div>
