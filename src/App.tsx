@@ -279,10 +279,10 @@ export default function App() {
           </h1>
 
           <p className="animate-fade-up-delay-2 mt-6 max-w-md text-sm leading-relaxed text-white/70 sm:text-base lg:mt-8">
-            Convertimos ideas locas en piezas reales
+            Convertimos tus ideas más locas en piezas reales
             <br />
-            que no solo llaman la atención —{' '}
-            <span className="font-bold text-white">la roban.</span>
+            — diseñadas a tu medida y{' '}
+            <span className="font-bold text-white">listas para presumir.</span>
           </p>
 
           <div className="animate-fade-up-delay-3 mt-8 flex flex-wrap items-center gap-4 sm:gap-6 lg:mt-10">
