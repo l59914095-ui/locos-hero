@@ -164,7 +164,7 @@ export default function App() {
         }`}
       >
         <a href="#inicio" className="flex items-center gap-3">
-          <img src={`${BASE}img/logo-icono.png`} alt="" className="h-10 w-10 object-contain sm:h-11 sm:w-11" />
+          <img src={`${BASE}img/logo-azul-icono.png`} alt="" className="h-10 w-10 object-contain sm:h-11 sm:w-11" />
           <span className="font-podium text-2xl font-bold uppercase tracking-wider text-white sm:text-3xl">
             LOCOS <span className="text-[#FF847C]">3D</span>
           </span>
@@ -207,7 +207,7 @@ export default function App() {
       >
         <div className="flex items-center justify-between px-6 py-5">
           <span className="flex items-center gap-3">
-            <img src={`${BASE}img/logo-icono.png`} alt="" className="h-10 w-10 object-contain" />
+            <img src={`${BASE}img/logo-azul-icono.png`} alt="" className="h-10 w-10 object-contain" />
             <span className="font-podium text-2xl font-bold uppercase tracking-wider text-white">
               LOCOS <span className="text-[#FF847C]">3D</span>
             </span>
@@ -502,7 +502,7 @@ export default function App() {
         <div className="mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal className="order-2 lg:order-1">
             <img
-              src={`${BASE}img/logo-claro.png`}
+              src={`${BASE}img/logo-azul.png`}
               alt="Locos Diseños E Impresiones 3D"
               loading="lazy"
               className="mx-auto w-full max-w-sm drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
@@ -592,7 +592,7 @@ export default function App() {
       <footer className="border-t border-white/10 px-6 py-12 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-8 md:flex-row">
           <img
-            src={`${BASE}img/logo-claro.png`}
+            src={`${BASE}img/logo-azul.png`}
             alt="Locos Diseños E Impresiones 3D"
             loading="lazy"
             className="h-24 w-auto object-contain"
